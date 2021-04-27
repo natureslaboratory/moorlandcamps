@@ -1,0 +1,10 @@
+<perch:before>
+    <div class="c-nav">
+</perch:before>
+		<div class="c-nav__element <perch:if exists="current_page">c-nav__element--selected</perch:if><perch:if exists="ancestor_page">c-nav__element--ancestor</perch:if>">
+            <a class="c-nav__link" href="<perch:pages id="pagePath" />"><perch:pages id="pageNavText" /></a>   
+            <perch:pages id="subitems" encode="false" />
+        </div>
+<perch:after>
+    </div>
+</perch:after>

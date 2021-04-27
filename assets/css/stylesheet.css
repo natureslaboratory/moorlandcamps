@@ -1,0 +1,157 @@
+:root {
+    --theme: #f58b7a;
+}
+
+.l-wrap {
+    padding: 0 1rem;
+}
+
+.c-header {
+    min-height: 250px;
+    background-size: cover;
+}
+
+.c-header--large {
+    min-height: 430px;
+}
+
+.c-nav {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 0 4rem;
+    min-width: 30rem;
+    border-radius: 50rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.c-nav__element {
+    position: relative;
+    font-weight: bolder;
+    color: var(--theme);
+}
+
+.c-nav__element--selected, .c-nav__element:hover {
+    color: #faa959;
+}
+
+.c-nav__element--selected::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 11px;
+    height: 11px;
+    border-radius: 50px;
+    background-color: #faa959;
+}
+
+.c-nav__link {
+    padding: 0.75rem 1rem;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.c-home-intro {
+    margin: 6rem auto;
+    color: #00514d;
+}
+
+.c-home-intro h2 {
+    font-weight: normal;
+    color: #00707b;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.c-home-intro p {
+    margin-bottom: 1rem;
+}
+
+.c-home-intro p:last-child {
+    margin-bottom: 0;;
+}
+
+.c-home-intro__feature-paragraph {
+    font-weight: bolder;
+}
+
+.c-feature-break {
+    width: 100%;
+    margin-bottom: 100rem;
+    position: relative;
+}
+
+.c-feature-break__banner {
+    width: 100%;
+    height: 180px;
+    background-color: #00707b;
+}
+
+.c-feature-break__bottom {
+    display: flex;
+    justify-content: center;
+    gap: min(2vw, 31px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.c-feature-break__testimony {
+    background-color: var(--theme);
+    color: white;
+    padding: min(2vw, 31px);
+    max-width: min(29.1vw, 448px);
+    display: flex;
+    flex-direction: column;
+    font-weight: bolder;
+}
+
+.c-feature-break__testimony-quote {
+    font-size: clamp(1.2rem, 2.3vw, 32px);
+    line-height: normal;
+}
+
+.c-feature-break__testimony-name {
+    margin-top: auto;
+    font-style: italic;
+    font-size: clamp(1rem, 1.8vw, 32px);
+}
+
+.c-feature-break__image-wrapper {
+    max-width: min(52vw, 800px);
+    padding-top: min(3vw, 46px);
+}
+
+.c-feature-break__image {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: min(1.4vw, 22px);
+    aspect-ratio: 16 / 8.5;
+    transform: rotate(2deg);
+}
+
+.c-feature-break__caption {
+    text-align: right;
+    padding-right: 4rem;
+    color: var(--theme);
+}
+
+.c-feature-break__caption p {
+    line-height: normal;
+    max-width: none;
+    font-size: clamp(1rem, 1.3vw, 1.4rem);
+
+}
+
+.c-feature-break__caption p:first-child {
+    font-size: clamp(1.4rem, 1.9vw, 2rem);
+}
