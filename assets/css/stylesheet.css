@@ -8,7 +8,6 @@
 
 .l-wrap {
     padding: 0 1rem;
-    margin-bottom: 4rem;
 }
 
 .l-wrap:last-child {
@@ -21,6 +20,12 @@
 .l-restrict {
     max-width: 1280px;
     margin: 0 auto;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.l-restrict--no-top-padding {
+    padding-top: 0;
 }
 
 .l-restrict--narrow {
@@ -443,13 +448,39 @@
     }
 }
 
+.c-faq {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
 .c-faq__answer {
     max-height: 0;
     overflow: hidden;
     transition: 150ms;
+    margin-top: 0.4rem;
+}
+
+.c-faq__question-wrapper {
+    position: relative;
+    left: 2.5rem;
 }
 
 .c-faq__question {
     cursor: pointer;
+    text-decoration: underline;
+    position: relative;
+}
+
+.c-faq__question::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -2rem;
+    height: 8px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: var(--primary);
 }
 
