@@ -12,6 +12,7 @@ ini_set('error_reporting', E_ALL);
 ?>
 <?php perch_layout("global.header") ?>
 
+<main>
 <?php perch_content("Page Content"); ?>
-
+</main>
 <?php perch_layout("global.footer") ?>

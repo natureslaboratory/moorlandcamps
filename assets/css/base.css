@@ -120,7 +120,14 @@ body {
 main {
     flex-grow: 2;
     align-items: stretch;
+    display: flex;
+    flex-direction: column;
 }
+
+a {
+    display: block;
+}
+
 
 body.no-scroll {
     overflow-y: hidden;

@@ -8,6 +8,11 @@
     padding: 0 1rem;
 }
 
+.l-restrict {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
 .c-header {
     min-height: 250px;
     background-size: cover;
@@ -175,14 +180,14 @@
 
 .c-feature-break__banner {
     width: 100%;
-    height: 180px;
+    height: 200px;
     background-color: #00707b;
 }
 
 .c-feature-break__bottom {
     display: flex;
     justify-content: center;
-    gap: min(14px, 2vw, 31px);
+    gap: min(31px, 4vw, 62px);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -201,7 +206,7 @@
 }
 
 .c-feature-break__testimony-quote {
-    font-size: clamp(1.2rem, 2.3vw, 32px);
+    font-size: clamp(1.2rem, 2.3vw, 36px);
     line-height: normal;
 }
 
@@ -226,7 +231,7 @@
 
 .c-feature-break__caption {
     text-align: right;
-    padding-right: 4rem;
+    padding-right: clamp(38.5px, 5vw, 77px);
     color: var(--primary);
 }
 
@@ -276,4 +281,35 @@
 .c-discover p {
     color: var(--secondary);
     padding-left: 4rem;
+}
+
+.c-footer {
+    width: 100%;
+    background-color: var(--secondary);
+    color: var(--primary);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.c-footer__content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.c-footer__details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    gap: 1rem;
+}
+
+.c-footer__details::before {
+    content: '';
+    width: 1px;
+    height: 100%;
+    background-color: var(--primary);
+    top: 0;
+    position: absolute;
+    left: 50%;
+    /* transform: translateX(-50%); */
 }
