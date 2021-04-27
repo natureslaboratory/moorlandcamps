@@ -1,5 +1,7 @@
 :root {
-    --theme: #f58b7a;
+    --primary: #f58b7a;
+    --secondary: #00514d;
+    --secondary-light: #00707b;
 }
 
 .l-wrap {
@@ -9,6 +11,7 @@
 .c-header {
     min-height: 250px;
     background-size: cover;
+    background-position: 50% 90%;
 }
 
 .c-header--large {
@@ -32,7 +35,7 @@
 .c-nav__element {
     position: relative;
     font-weight: bolder;
-    color: var(--theme);
+    color: var(--primary);
 }
 
 .c-nav__element--selected, .c-nav__element:hover {
@@ -51,11 +54,93 @@
     background-color: #faa959;
 }
 
-.c-nav__link {
+.c-nav__link, .c-hamburger__link {
     padding: 0.75rem 1rem;
     display: block;
     text-decoration: none;
     color: inherit;
+}
+
+.c-hamburger {
+    display: none;
+}
+
+.c-hamburger__button {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: absolute;
+    padding: 0.8rem;
+    border-radius: 50px;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.c-hamburger__button div {
+    width: 18px;
+    height: 3px;
+    background-color: var(--primary);
+}
+
+.c-hamburger__menu.show ~ .c-hamburger__button {
+    opacity: 0;
+}
+
+.c-hamburger__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.925);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+    transition: 300ms ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.c-hamburger__element:first-child {
+    margin-top: 5rem;
+}
+
+.c-hamburger__menu.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.c-hamburger__close {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.8rem;
+}
+
+.c-hamburger__close svg {
+    width: 18px;
+    height: auto;
+}
+
+.c-cross__g {
+    fill: var(--primary);
+    aspect-ratio: 1 / 1;
+    width: auto;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .c-nav {
+        display: none;
+    }
+
+    .c-hamburger {
+        display: block;
+    }
 }
 
 .c-home-intro {
@@ -84,8 +169,8 @@
 
 .c-feature-break {
     width: 100%;
-    margin-bottom: 100rem;
     position: relative;
+    margin-bottom: min(37vw, 569px);
 }
 
 .c-feature-break__banner {
@@ -97,7 +182,7 @@
 .c-feature-break__bottom {
     display: flex;
     justify-content: center;
-    gap: min(2vw, 31px);
+    gap: min(14px, 2vw, 31px);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -106,10 +191,10 @@
 }
 
 .c-feature-break__testimony {
-    background-color: var(--theme);
+    background-color: var(--primary);
     color: white;
-    padding: min(2vw, 31px);
-    max-width: min(29.1vw, 448px);
+    padding: clamp(15px, 2vw, 31px);
+    max-width: clamp(224px, 29.1vw, 448px);
     display: flex;
     flex-direction: column;
     font-weight: bolder;
@@ -127,14 +212,14 @@
 }
 
 .c-feature-break__image-wrapper {
-    max-width: min(52vw, 800px);
-    padding-top: min(3vw, 46px);
+    max-width: clamp(400px, 52vw, 800px);
+    padding-top: clamp(23px ,3vw, 46px);
 }
 
 .c-feature-break__image {
     width: 100%;
     object-fit: cover;
-    margin-bottom: min(1.4vw, 22px);
+    margin-bottom: clamp(11px, 1.4vw, 22px);
     aspect-ratio: 16 / 8.5;
     transform: rotate(2deg);
 }
@@ -142,7 +227,7 @@
 .c-feature-break__caption {
     text-align: right;
     padding-right: 4rem;
-    color: var(--theme);
+    color: var(--primary);
 }
 
 .c-feature-break__caption p {
@@ -154,4 +239,41 @@
 
 .c-feature-break__caption p:first-child {
     font-size: clamp(1.4rem, 1.9vw, 2rem);
+}
+
+@media screen and (max-width: 768px) {
+    .c-feature-break__bottom {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    .c-feature-break__banner {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .c-feature-break {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-bottom: 4rem;
+    }
+}
+
+.c-discover {
+    margin: 0 auto;
+    margin-bottom: 6rem;
+}
+
+.c-discover h2 {
+    color: var(--primary);
+    text-decoration: underline;
+    font-weight: normal;
+    margin-bottom: 1.4rem;
+}
+
+.c-discover p {
+    color: var(--secondary);
+    padding-left: 4rem;
 }

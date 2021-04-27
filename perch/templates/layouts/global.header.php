@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php perch_pages_title(); ?></title>
     <?php perch_page_attributes(); ?>
     <link rel="stylesheet" type="text/css" href="/assets/css/base.css?v=<?php echo rand() ?>">
@@ -20,6 +22,10 @@ perch_content_create("Header Image", ["template" => "header_image.html"])
             class="c-header c-header--<?php echo PerchSystem::get_page() == "/index.php" ? "large" : "normal" ?> l-wrap">
         <?php perch_pages_navigation([
             'levels'=>1]
+            ); ?>
+        <?php perch_pages_navigation([
+            'levels'=>1,
+            'template'=>'hamburgerItem.html']
             ); ?>
         <!-- <div class="c-header__logo-wrapper">
             <img src="" alt="Logo">
