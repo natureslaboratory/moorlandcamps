@@ -2,15 +2,29 @@
     --primary: #f58b7a;
     --secondary: #00514d;
     --secondary-light: #00707b;
+    --tertiary: #fedec3;
+    --quarternary: #faa959;
 }
 
 .l-wrap {
     padding: 0 1rem;
+    margin-bottom: 4rem;
+}
+
+.l-wrap:last-child {
+}
+
+.l-wrap--tertiary {
+    background-color: var(--tertiary);
 }
 
 .l-restrict {
     max-width: 1280px;
     margin: 0 auto;
+}
+
+.l-restrict--narrow {
+    max-width: 40em;
 }
 
 .c-header {
@@ -313,3 +327,129 @@
     left: 50%;
     /* transform: translateX(-50%); */
 }
+
+.c-choose-camp {
+    display: flex;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.c-choose-camp__choose {
+    width: 100%;
+}
+
+.c-choose-camp__logo-placeholder {
+    width: 250px;
+    height: 250px;
+}
+
+.c-choose-camp__options-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+    gap: 5rem 4rem;
+}
+
+@media screen and (max-width: 600px) {
+    .c-choose-camp {
+        flex-direction: column;
+    }
+    
+}
+
+.c-choose-camp__choose h2 {
+    margin-bottom: 4rem;
+    color: var(--secondary);
+    font-weight: normal;
+}
+
+.c-choose-camp__option {
+    height: 300px;
+    background-size: cover;
+    position: relative;
+}
+
+.c-choose-camp__option h3 {
+    background-color: var(--secondary);
+    color: white;
+    position: absolute;
+    padding: 0.3rem;
+    font-size: 1.5rem;
+}
+
+.c-choose-camp__option:nth-child(1) h3 {
+    bottom: 1.3rem;
+    right: 1rem;
+    transform: rotate(-4deg);
+    background-color: var(--quarternary);
+}
+
+.c-choose-camp__option:nth-child(2) h3 {
+    bottom: 1rem;
+    left: 1rem;
+    transform: rotate(0deg);
+    background-color: var(--secondary);
+}
+
+
+.c-choose-camp__option:nth-child(3) h3 {
+    top: 1.3rem;
+    right: 1rem;
+    transform: rotate(2deg);
+    background-color: var(--secondary-light);
+}
+
+.c-choose-camp__option:nth-child(4) h3 {
+    bottom: 1.3rem;
+    right: 1rem;
+    transform: rotate(-4deg);
+    background-color: var(--primary);
+}
+
+.c-text {
+    margin: 0 auto;
+}
+
+.c-text h2 {
+    margin-bottom: 2.4rem;
+}
+
+.c-text h3 {
+    margin-bottom: 1.6rem;
+}
+
+.c-text p + h3 {
+    margin-top: 2rem;
+}
+
+.c-text p{
+    margin-bottom: 1.4rem;
+}
+
+@media screen and (max-width: 600px) {
+    .c-text h2 {
+        margin-bottom: 2rem;
+    }
+    
+    .c-text h3 {
+        margin-bottom: 1.2rem;
+    }
+    
+    .c-text p + h3 {
+        margin-top: 1.6rem;
+    }
+    
+    .c-text p{
+        margin-bottom: 1rem;
+    }
+}
+
+.c-faq__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: 150ms;
+}
+
+.c-faq__question {
+    cursor: pointer;
+}
+

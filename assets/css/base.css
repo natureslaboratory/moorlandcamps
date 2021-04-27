@@ -107,6 +107,8 @@ h1 {
 
 h2, h3 {
     max-width: none;
+    color: var(--secondary);
+    font-weight: normal;
 }
 
 body {

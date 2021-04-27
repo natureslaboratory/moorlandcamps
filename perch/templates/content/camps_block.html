@@ -1,16 +1,41 @@
 <perch:blocks>
     <perch:block label="Choose Camp" type="choose">
-        <div class="l-wrap c-choose-camp">
-            <div class="c-choose-camp__logo-placeholder"></div>
-            <div class="c-choose-camp__choose">
-                <h2>Choose Your Camp!</h2>
-                <div class="c-choose-camp__options-wrapper">
-                <perch:repeater label="Options">
-                    <a href="<perch:content id="link" type="text" label="Link">" class="c-choose-camp__option" style="background-image: url(<perch:content id="background" label="Image" type="image" height="300" width="400" crop>)">
-                        <h2><perch:content type="text" label="Title" id="optionTitle"></h2>
-                    </a>
-                </perch:repeater>
+        <div class="l-wrap l-wrap--tertiary">
+            <div class="l-restrict c-choose-camp">
+                <div class="c-choose-camp__logo-placeholder"></div>
+                <div class="c-choose-camp__choose">
+                    <h2>Choose Your Camp!</h2>
+                    <div class="c-choose-camp__options-wrapper">
+                    <perch:repeater label="Options" id="optionsRepeater">
+                        <a href="<perch:content id="link" type="text" label="Link">" class="c-choose-camp__option" style="background-image: url(<perch:content id="background" label="Image" type="image" height="300" width="400" crop>)">
+                            <h3><perch:content type="text" label="Title" id="optionTitle"></h3>
+                        </a>
+                    </perch:repeater>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </perch:block>
+
+    <perch:block label="Text" type="text">
+        <div class="l-wrap">
+            <div class="l-restrict l-restrict--narrow c-text">
+                <perch:content id="text" label="Text" type="textarea" editor="redactor" html>
+            </div>
+        </div>
+    </perch:block>
+
+    <perch:block label="FAQs" type="faq">
+        <div class="l-wrap">
+            <div class="l-restrict l-restrict--narrow c-faq">
+                <perch:repeater label="Questions" id="faqRepeater">
+                    <div class="c-faq__question-wrapper">
+                        <p class="c-faq__question"><strong><perch:content id="question" label="Question" type="text"></strong></p>
+                        <div class="c-faq__answer">
+                            <perch:content id="answer" label="Answer" type="textarea" editor="redactor" html >
+                        </div>
+                    </div>
+                </perch:repeater>
             </div>
         </div>
     </perch:block>
