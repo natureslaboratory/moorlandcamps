@@ -59,7 +59,7 @@
 }
 
 .c-header {
-    min-height: 250px;
+    min-height: 210px;
     background-size: cover;
     background-position: 50% 90%;
 }
@@ -218,9 +218,22 @@
 }
 
 .c-feature-break {
+    --left-width: clamp(224px, 29.1vw, 336px);
+    --right-width: clamp(400px, 52vw, 600px);
+    --left-padding: clamp(15px, 2vw, 23px);
+    --right-top-padding: clamp(23px ,3vw, 35px);
+    --right-bottom-margin: clamp(11px, 1.4vw, 16px);
+    --gap: min(31px, 4vw, 46px);
+    margin-bottom: min(37vw, 426px);
+    --caption-padding: clamp(38.5px, 5vw, 58px);
+
+    --testimony-font-size: clamp(1.2rem, 2.3vw, 28px);
+    --testimony-name-font-size: clamp(1rem, 1.8vw, 24px);
+    --image-caption-font-size: clamp(1rem, 1.3vw, 1.2rem);
+    --image-caption-main-font-size: clamp(1.4rem, 1.9vw, 1.7rem);
+
     width: 100%;
     position: relative;
-    margin-bottom: min(37vw, 569px);
 }
 
 .c-feature-break__banner {
@@ -232,7 +245,7 @@
 .c-feature-break__bottom {
     display: flex;
     justify-content: center;
-    gap: min(31px, 4vw, 62px);
+    gap: var(--gap);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -243,52 +256,66 @@
 .c-feature-break__testimony {
     background-color: var(--primary);
     color: white;
-    padding: clamp(15px, 2vw, 31px);
-    max-width: clamp(224px, 29.1vw, 448px);
+    padding: var(--left-padding);
+    max-width: var(--left-width);
     display: flex;
     flex-direction: column;
     font-weight: bolder;
 }
 
+.c-feature-break .c-feature-break__testimony-wrapper {
+    width: var(--left-width);
+    height: 100%;
+}
+
+.c-feature-break .slick-track .c-feature-break__testimony {
+    min-height: clamp(268px, 34.8vw, 402px);
+    display: flex;
+    flex-direction: column;
+}
+
 .c-feature-break__testimony-quote {
-    font-size: clamp(1.2rem, 2.3vw, 36px);
+    font-size: var(--testimony-font-size);
     line-height: normal;
+    color: white;
 }
 
 .c-feature-break__testimony-name {
     margin-top: auto;
     font-style: italic;
-    font-size: clamp(1rem, 1.8vw, 32px);
+    font-size: var(--testimony-name-font-size);
+    color: white;
+    padding-top: 1rem;
 }
 
 .c-feature-break__image-wrapper {
-    max-width: clamp(400px, 52vw, 800px);
-    padding-top: clamp(23px ,3vw, 46px);
+    max-width: var(--right-width);
+    padding-top: var(--right-top-padding);
 }
 
 .c-feature-break__image {
     width: 100%;
     object-fit: cover;
-    margin-bottom: clamp(11px, 1.4vw, 22px);
+    margin-bottom: var(--right-bottom-margin);
     aspect-ratio: 16 / 8.5;
     transform: rotate(2deg);
 }
 
 .c-feature-break__caption {
     text-align: right;
-    padding-right: clamp(38.5px, 5vw, 77px);
-    color: var(--primary);
+    padding-right: var(--caption-padding);
 }
 
 .c-feature-break__caption p {
     line-height: normal;
     max-width: none;
-    font-size: clamp(1rem, 1.3vw, 1.4rem);
+    font-size: var(--image-caption-font-size);
+    color: var(--primary);
 
 }
 
 .c-feature-break__caption p:first-child {
-    font-size: clamp(1.4rem, 1.9vw, 2rem);
+    font-size: var(--image-caption-main-font-size);
 }
 
 @media screen and (max-width: 768px) {
@@ -388,7 +415,7 @@
 .c-choose-camp__camps {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
-    gap: 5rem 4rem;
+    gap: 4rem 3.3rem;
 }
 
 
@@ -399,7 +426,7 @@
 }
 
 .c-choose-camp__camp {
-    height: 300px;
+    height: clamp(270px, 25vw, 332px);
     background-size: cover;
     position: relative;
 }
@@ -538,7 +565,7 @@
 }
 
 .c-carousel .c-carousel__horse {
-    height: 300px;
+    height: 180px;
     padding: 1rem 0.5rem;
 }
 
@@ -551,13 +578,6 @@
     position: absolute;
     opacity: 0;
     pointer-events: none;
-}
-
-@media screen and (max-width: 600px) {
-    .c-carousel .c-carousel__horse {
-        height: 200px;
-        padding: 1rem 0.5rem;
-    }
 }
 
 .c-booking-form__columns {

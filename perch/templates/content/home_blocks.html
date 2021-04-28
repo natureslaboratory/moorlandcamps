@@ -27,19 +27,17 @@
         <div class="c-feature-break">
             <div class="c-feature-break__banner"></div>
             <div class="c-feature-break__bottom l-wrap">
-                <div class="c-feature-break__testimony">
-                    <p class="c-feature-break__testimony-quote">
-                        I really loved my time
-                        at Moorland Camp in
-                        the UK. I especially
-                        enjoyed visiting
-                        Whitby. Moorland
-                        Camps are highly
-                        recommended!
-                    </p>
-                    <p class="c-feature-break__testimony-name">
-                        Paul, Korea
-                    </p>
+                <div class="c-feature-break__testimony-wrapper">
+                    <perch:repeater type="testomonies" label="Testimonies">
+                        <div class="c-feature-break__testimony">
+                            <p class="c-feature-break__testimony-quote">
+                                <perch:content type="textarea" label="Testimony" id="testimony">
+                            </p>
+                            <p class="c-feature-break__testimony-name">
+                                <perch:content type="text" label="Name" id="name">
+                            </p>
+                        </div>
+                    </perch:repeater>
                 </div>
                 <div class="c-feature-break__image-wrapper">
                     <img src="/perch/resources/caroline-jackson-lozb8jpjlaa-unsplashsmall.jpg" alt="Whitby" class="c-feature-break__image">

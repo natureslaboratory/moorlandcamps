@@ -18,7 +18,9 @@
     <perch:block type="image-carousel" label="Image Carousel">
         <div class="c-carousel">
             <perch:repeater label="Images" type="imageRepeater">
-                <img class="c-carousel__horse" src="<perch:content type="image" label="Image" id="carouselImage">" alt="<perch:content type="text" label="Image Alt" id="carouselImageAlt">">
+                <a href="<perch:content type="image" label="Image" id="carouselImage" width="300">" data-fancybox data-caption="<perch:content type="text" label="Caption" id="caption">">
+                    <img class="c-carousel__horse" src="<perch:content id="carouselImage" width="800">" alt="<perch:content type="text" label="Image Alt" id="carouselImageAlt">">
+                </a>
             </perch:repeater>
         </div>
     </perch:block>

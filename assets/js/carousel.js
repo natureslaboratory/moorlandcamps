@@ -12,4 +12,12 @@ $(document).ready(() => {
       easing: "ease-in",
       speed: 600,
   })
+
+  $('.c-feature-break__testimony-wrapper').slick({
+    infinite: true,
+    fade: true,
+    speed: 600,
+    autoplay: true,
+    autoplaySpeed: 6000
+})
 });
