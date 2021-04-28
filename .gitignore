@@ -19,3 +19,4 @@ perch/*
 !webpack.config.js
 !stripe-php-7.62.0
 !.gitignore
+!tsconfig.json

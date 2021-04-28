@@ -1,12 +1,12 @@
-<perch:block label="Text" type="text">
+<perch:block perch:label="Text" type="text">
     <div class="l-wrap">
-        <div class="l-restrict l-restrict--narrow l-restrict--<perch:content id="padding" label="Padding" type="select" options="normal, no-top-padding, no-padding"> c-text">
-            <perch:content id="text" label="Text" type="textarea" editor="redactor" html>
+        <div class="l-restrict l-restrict--narrow l-restrict--<perch:content id="padding" perch:label="Padding" type="select" options="normal, no-top-padding, no-padding"> c-text">
+            <perch:content id="text" perch:label="Text" type="textarea" editor="redactor" html>
         </div>
     </div>
 </perch:block>
 
-<perch:block label="Booking Enquiry" type="booking">
+<perch:block perch:label="Booking Enquiry" type="booking">
     <div class="l-wrap l-wrap--tertiary">
         <div class="l-restrict l-restrict--narrow">
             <perch:form id="booking_enquiry" method="post" app="perch_forms" class="c-booking-form">
@@ -14,36 +14,39 @@
                 <div class="c-booking-form__columns">
                     <div class="c-booking-form__column">
                         <div class="c-booking-form__section">
-                            <label for="name">Your Name</label>
-                            <perch:input type="text" id="name" label="Name">
+                            <perch:label for="name">Your Name</perch:label>
+                            <perch:input type="text" id="name" perch:label="Name">
                         </div>
                         <div class="c-booking-form__section">
-                            <label for="name">Your Phone Number</label>
-                            <perch:input type="tel" id="phone" label="Phone">
+                            <perch:label for="name">Your Phone Number</perch:label>
+                            <perch:input type="tel" id="phone" perch:label="Phone">
                         </div>
                         <div class="c-booking-form__section">
-                            <label for="name">Your Email Address</label>
-                            <perch:input type="email" id="email" label="Email">
+                            <perch:label for="name">Your Email Address</perch:label>
+                            <perch:input type="email" id="email" perch:label="Email">
                         </div>
                         <div class="c-booking-form__section">
-                            <label for="name">Your School/Organisation Name</label>
-                            <perch:input type="text" id="school" label="School/Organisation">
+                            <perch:label for="name">Your School/Organisation Name</perch:label>
+                            <perch:input type="text" id="school" perch:label="School/Organisation">
                         </div>
                     </div>
                     <div class="c-booking-form__column">
                         <div class="c-booking-form__section" style="flex-grow: 2">
-                            <label for="name">Your Booking Enquiry</label>
-                            <perch:input type="textarea" id="enquiry" label="Enquiry">
+                            <perch:label for="name">Your Booking Enquiry</perch:label>
+                            <perch:input type="textarea" id="enquiry" perch:label="Enquiry">
                             <p class="c-booking-form__section-info">
                                 Please include all relevant information such as the number of children you 
                                 would be bringing and how long you would like the camp to run for.
                             </p>
                         </div>
                         <div class="c-booking-form__section">
-                            <perch:input type="submit" id="submit" label="Submit" value="Send Enquiry">
+                            <perch:input type="submit" id="submit" perch:label="Submit" value="Send Enquiry">
                         </div>
                     </div>
                 </div>
+                <perch:success>
+                    <perch:content id="success" type="textarea" label="Thank you message" textile editor="markitup">
+                </perch:success>
             </perch:form>
         </div>
     </div>

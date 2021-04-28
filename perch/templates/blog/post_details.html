@@ -1,0 +1,31 @@
+
+<h2><perch:blog id="postTitle"></h2>
+
+<perch:if exists="postSubTitle">
+    <h4><perch:blog id="postSubTitle"></h4>
+</perch:if>
+
+<div class="c-post-details__author">
+    <perch:if exists="authorImage">
+        <img 
+            src="<perch:blog 
+                    id="authorImage" 
+                    type="image" 
+                    width="100" 
+                    height="100" 
+                    crop="true" 
+                    label="Author Image" 
+                    order="4" />" 
+            alt="<perch:blog 
+                    id="authorGivenName" 
+                    type="hidden" />" 
+            class="c-post-details__author-image"
+        />
+    </perch:if>
+    <div class="c-post-details__author-details">
+        <perch:if exists="authorGivenName">
+            <p><perch:blog id="authorGivenName" type="hidden" label="Name" /> <perch:blog id="authorFamilyName" type="hidden" /></p>
+        </perch:if>
+        <p class="c-post-details__date"><perch:blog id="postDateTime" type="date" time="true" format="%d %B %Y" label="Date Published" /></p>
+    </div>
+</div>
