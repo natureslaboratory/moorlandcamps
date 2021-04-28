@@ -6,7 +6,8 @@ let body = document.getElementsByTagName("body")[0];
 let hamburgerClose = document.getElementsByClassName("c-hamburger__close")[0];
 
 hamburgerButton.addEventListener("click", () => {
-    hamburgerMenu[0].classList.add("show");
+    console.log(hamburgerMenu.classList);
+    hamburgerMenu.classList.add("show");
     body.classList.add("no-scroll");
 })
 

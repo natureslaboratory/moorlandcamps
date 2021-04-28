@@ -8,8 +8,43 @@
 
 <perch:block label="Booking Enquiry" type="booking">
     <div class="l-wrap l-wrap--tertiary">
-        <div class="l-restrict">
-            Hello
+        <div class="l-restrict l-restrict--narrow">
+            <perch:form id="booking_enquiry" method="post" app="perch_forms" class="c-booking-form">
+                <h2 class="c-booking-form__title">Make a Booking Enquiry</h2>
+                <div class="c-booking-form__columns">
+                    <div class="c-booking-form__column">
+                        <div class="c-booking-form__section">
+                            <label for="name">Your Name</label>
+                            <perch:input type="text" id="name" label="Name">
+                        </div>
+                        <div class="c-booking-form__section">
+                            <label for="name">Your Phone Number</label>
+                            <perch:input type="tel" id="phone" label="Phone">
+                        </div>
+                        <div class="c-booking-form__section">
+                            <label for="name">Your Email Address</label>
+                            <perch:input type="email" id="email" label="Email">
+                        </div>
+                        <div class="c-booking-form__section">
+                            <label for="name">Your School/Organisation Name</label>
+                            <perch:input type="text" id="school" label="School/Organisation">
+                        </div>
+                    </div>
+                    <div class="c-booking-form__column">
+                        <div class="c-booking-form__section" style="flex-grow: 2">
+                            <label for="name">Your Booking Enquiry</label>
+                            <perch:input type="textarea" id="enquiry" label="Enquiry">
+                            <p class="c-booking-form__section-info">
+                                Please include all relevant information such as the number of children you 
+                                would be bringing and how long you would like the camp to run for.
+                            </p>
+                        </div>
+                        <div class="c-booking-form__section">
+                            <perch:input type="submit" id="submit" label="Submit" value="Send Enquiry">
+                        </div>
+                    </div>
+                </div>
+            </perch:form>
         </div>
     </div>
 </perch:block>

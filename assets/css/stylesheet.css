@@ -537,10 +537,6 @@
     padding: 0;
 }
 
-.c-carousel {
-    min-height: 300px;
-}
-
 .c-carousel .c-carousel__horse {
     height: 300px;
     padding: 1rem 0.5rem;
@@ -555,4 +551,51 @@
     position: absolute;
     opacity: 0;
     pointer-events: none;
+}
+
+@media screen and (max-width: 600px) {
+    .c-carousel .c-carousel__horse {
+        height: 200px;
+        padding: 1rem 0.5rem;
+    }
+}
+
+.c-booking-form__columns {
+    margin-top: 1.4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    gap: 2rem;
+}
+
+.c-booking-form__column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.c-booking-form__section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.c-booking-form__section :is(input, textarea) {
+    border: none;
+    padding: 0.5rem;
+}
+
+.c-booking-form__section textarea {
+    resize: vertical;
+    flex-grow: 2;
+}
+
+.c-booking-form__section label {
+    font-weight: bolder;
+    color: var(--secondary);
+    margin-bottom: 0.2rem;
+}
+
+.c-booking-form__section-info {
+    font-size: var(--size-300);
+    line-height: normal;
 }

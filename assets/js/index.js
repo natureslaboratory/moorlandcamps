@@ -138,7 +138,8 @@ var hamburgerButton = document.getElementsByClassName("c-hamburger__button")[0];
 var body = document.getElementsByTagName("body")[0];
 var hamburgerClose = document.getElementsByClassName("c-hamburger__close")[0];
 hamburgerButton.addEventListener("click", function () {
-    hamburgerMenu[0].classList.add("show");
+    console.log(hamburgerMenu.classList);
+    hamburgerMenu.classList.add("show");
     body.classList.add("no-scroll");
 });
 hamburgerClose.addEventListener("click", function () {
