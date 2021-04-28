@@ -17,6 +17,28 @@
     background-color: var(--tertiary);
 }
 
+.l-wrap--secondary {
+    background-color: var(--secondary);
+    color: white;
+}
+
+:is(.l-wrap--secondary, .l-wrap--secondary-light, .l-wrap--primary) :is(h2, h3, p) {
+    color: white;
+}
+
+.l-wrap--secondary-light {
+    background-color: var(--secondary-light);
+    color: white;
+}
+
+.l-wrap--tertiary {
+    background-color: var(--tertiary);
+}
+
+.l-wrap--quarternary {
+    background-color: var(--quarternary);
+}
+
 .l-restrict {
     max-width: 1280px;
     margin: 0 auto;
@@ -26,6 +48,10 @@
 
 .l-restrict--no-top-padding {
     padding-top: 0;
+}
+
+.l-restrict--no-padding {
+    padding: 0;
 }
 
 .l-restrict--narrow {
@@ -62,11 +88,11 @@
     color: var(--primary);
 }
 
-.c-nav__element--selected, .c-nav__element:hover {
+.c-nav__element--selected, .c-nav__element:hover, .c-nav__element--ancestor {
     color: #faa959;
 }
 
-.c-nav__element--selected::after {
+.c-nav__element--selected::after, .c-nav__element--ancestor::after {
     content: '';
     position: absolute;
     bottom: 0px;
@@ -304,7 +330,7 @@
 
 .c-footer {
     width: 100%;
-    background-color: var(--secondary);
+    background-color: var(--secondary-light);
     color: var(--primary);
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -333,47 +359,52 @@
     /* transform: translateX(-50%); */
 }
 
-.c-choose-camp {
+.c-footer p {
+    color: var(--primary);
+}
+
+.c-logo-left {
     display: flex;
     padding-top: 4rem;
     padding-bottom: 4rem;
 }
 
-.c-choose-camp__choose {
+.c-logo-left__content {
     width: 100%;
 }
 
-.c-choose-camp__logo-placeholder {
+.c-logo-left__placeholder {
     width: 250px;
     height: 250px;
 }
 
-.c-choose-camp__options-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
-    gap: 5rem 4rem;
-}
-
 @media screen and (max-width: 600px) {
-    .c-choose-camp {
+    .c-logo-left {
         flex-direction: column;
     }
     
 }
 
-.c-choose-camp__choose h2 {
+.c-choose-camp__camps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+    gap: 5rem 4rem;
+}
+
+
+.c-choose-camp h2 {
     margin-bottom: 4rem;
     color: var(--secondary);
     font-weight: normal;
 }
 
-.c-choose-camp__option {
+.c-choose-camp__camp {
     height: 300px;
     background-size: cover;
     position: relative;
 }
 
-.c-choose-camp__option h3 {
+.c-choose-camp__camp h3 {
     background-color: var(--secondary);
     color: white;
     position: absolute;
@@ -381,14 +412,14 @@
     font-size: 1.5rem;
 }
 
-.c-choose-camp__option:nth-child(1) h3 {
+.c-choose-camp__camp:nth-child(1) h3 {
     bottom: 1.3rem;
     right: 1rem;
     transform: rotate(-4deg);
     background-color: var(--quarternary);
 }
 
-.c-choose-camp__option:nth-child(2) h3 {
+.c-choose-camp__camp:nth-child(2) h3 {
     bottom: 1rem;
     left: 1rem;
     transform: rotate(0deg);
@@ -396,14 +427,14 @@
 }
 
 
-.c-choose-camp__option:nth-child(3) h3 {
+.c-choose-camp__camp:nth-child(3) h3 {
     top: 1.3rem;
     right: 1rem;
     transform: rotate(2deg);
     background-color: var(--secondary-light);
 }
 
-.c-choose-camp__option:nth-child(4) h3 {
+.c-choose-camp__camp:nth-child(4) h3 {
     bottom: 1.3rem;
     right: 1rem;
     transform: rotate(-4deg);
@@ -422,11 +453,23 @@
     margin-bottom: 1.6rem;
 }
 
-.c-text p + h3 {
-    margin-top: 2rem;
+.c-text h4 {
+    margin-bottom: 1.2rem;
 }
 
-.c-text p{
+.c-text p + h3 {
+    margin-top: 2.3rem;
+}
+
+.c-text p + h4 {
+    margin-top: 1.4rem;
+}
+
+.c-text h3 + h3 {
+    margin-top: -0.3rem;
+}
+
+.c-text p {
     margin-bottom: 1.4rem;
 }
 
@@ -484,3 +527,32 @@
     background-color: var(--primary);
 }
 
+.c-button {
+    margin-top: 2rem;
+    color: var(--tertiary);
+    text-decoration: underline;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    padding: 0;
+}
+
+.c-carousel {
+    min-height: 300px;
+}
+
+.c-carousel .c-carousel__horse {
+    height: 300px;
+    padding: 1rem 0.5rem;
+}
+
+.c-carousel__dots {
+    display: flex;
+    justify-content: center;
+}
+
+.slick-arrow {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}

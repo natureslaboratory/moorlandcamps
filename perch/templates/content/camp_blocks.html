@@ -1,0 +1,25 @@
+<perch:blocks>
+    <perch:template path="content/common_blocks.html">
+
+    <perch:block type="heading" label="Heading">
+        <div class="l-wrap l-wrap--<perch:content type="select" id="color" label="Background Color" options="white, primary, secondary, secondary-light, tertiary, quarternary">">
+            <div class="l-restrict c-logo-left">
+                <div class="c-logo-left__placeholder"></div>
+                <div class="c-logo-left__content">
+                    <div class="c-text">
+                        <perch:content type="textarea" label="Text" id="intro" editor="redactor" html>
+                    </div>
+                    <button class="c-button">Book Now!</button>
+                </div>
+            </div>
+        </div>
+    </perch:block>
+
+    <perch:block type="image-carousel" label="Image Carousel">
+        <div class="c-carousel">
+            <perch:repeater label="Images" type="imageRepeater">
+                <img class="c-carousel__horse" src="<perch:content type="image" label="Image" id="carouselImage">" alt="<perch:content type="text" label="Image Alt" id="carouselImageAlt">">
+            </perch:repeater>
+        </div>
+    </perch:block>
+</perch:blocks>

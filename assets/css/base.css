@@ -105,10 +105,19 @@ h1 {
     max-width: 15ch;
 }
 
-h2, h3 {
+h2, h3, h4 {
     max-width: none;
     color: var(--secondary);
     font-weight: normal;
+}
+
+h4 {
+    font-size: var(--size-400);
+    font-weight: bolder;
+}
+
+p {
+    color: var(--secondary);
 }
 
 body {
