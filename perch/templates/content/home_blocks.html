@@ -20,18 +20,21 @@
             <p>
                 Christian camps are also organised with the co-operation of church members in the UK.
             </p>
+            <img class="c-home-intro__svg" src="/perch/resources/peach-squiggle.svg" alt="Peach Squiggle" >
         </div>
     </perch:block>
 
     <perch:block label="Home Feature Break" type="feature_break">
         <div class="c-feature-break">
-            <div class="c-feature-break__banner"></div>
+            <div class="c-feature-break__banner">
+                <div class="c-feature-break__banner-mask"></div>
+            </div>
             <div class="c-feature-break__bottom l-wrap">
                 <div class="c-feature-break__testimony-wrapper">
                     <perch:repeater type="testomonies" label="Testimonies">
                         <div class="c-feature-break__testimony">
                             <p class="c-feature-break__testimony-quote">
-                                <perch:content type="textarea" label="Testimony" id="testimony">
+                            <perch:content type="textarea" label="Testimony" id="testimony">
                             </p>
                             <p class="c-feature-break__testimony-name">
                                 <perch:content type="text" label="Name" id="name">
@@ -40,9 +43,10 @@
                     </perch:repeater>
                 </div>
                 <div class="c-feature-break__image-wrapper">
+                    <img class="c-feature-break__bottom-svg" src="/perch/resources/quote.svg" alt="Quotation Mark">
                     <img src="/perch/resources/caroline-jackson-lozb8jpjlaa-unsplashsmall.jpg" alt="Whitby" class="c-feature-break__image">
                     <div class="c-feature-break__caption">
-                        <p>Whitby</p>
+                        <h3>Whitby</h3>
                         <p>North Yorkshire, UK</p>
                     </div>
                 </div>
@@ -52,7 +56,8 @@
 
     <perch:block label="Discover" type="discover">
         <div class="l-wrap c-discover">
-            <h2>Discover our Camps</h2>
+            <img src="/perch/resources/peach-dots.svg" alt="Peach Dots"  class="c-discover__svg">
+            <a href="/camps/"><h2>Discover our Camps</h2></a>
             <p>
                 Choose from four fantastic options, <br/> each offering something totally
                 different.

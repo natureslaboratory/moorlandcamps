@@ -1,4 +1,4 @@
-<perch:block perch:label="Text" type="text">
+<perch:block label="Text" type="text">
     <div class="l-wrap">
         <div class="l-restrict l-restrict--narrow l-restrict--<perch:content id="padding" perch:label="Padding" type="select" options="normal, no-top-padding, no-padding"> c-text">
             <perch:content id="text" perch:label="Text" type="textarea" editor="redactor" html>
@@ -6,9 +6,9 @@
     </div>
 </perch:block>
 
-<perch:block perch:label="Booking Enquiry" type="booking">
+<perch:block label="Booking Enquiry" type="booking">
     <div class="l-wrap l-wrap--tertiary">
-        <div class="l-restrict l-restrict--narrow">
+        <div class="l-restrict l-restrict--narrow" style="padding-top: 3rem">
             <perch:form id="booking_enquiry" method="post" app="perch_forms" class="c-booking-form">
                 <h2 class="c-booking-form__title">Make a Booking Enquiry</h2>
                 <div class="c-booking-form__columns">

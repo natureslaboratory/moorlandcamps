@@ -18,10 +18,16 @@
     <perch:block type="image-carousel" label="Image Carousel">
         <div class="c-carousel">
             <perch:repeater label="Images" type="imageRepeater">
-                <a href="<perch:content type="image" label="Image" id="carouselImage" width="300">" data-fancybox data-caption="<perch:content type="text" label="Caption" id="caption">">
-                    <img class="c-carousel__horse" src="<perch:content id="carouselImage" width="800">" alt="<perch:content type="text" label="Image Alt" id="carouselImageAlt">">
+                <perch:content type="image" width="800" label="Image" suppress="true" id="carouselImage">
+                <a href="<perch:content id="carouselImage" width="300">" data-fancybox data-caption="<perch:content type="text" label="Caption" id="caption">">
+                    <img class="c-carousel__horse" src="<perch:content id="carouselImage">" alt="<perch:content type="text" label="Image Alt" id="carouselImageAlt">">
                 </a>
             </perch:repeater>
         </div>
     </perch:block>
+
+    <perch:block label="Background" type="background">
+            <img class="c-camp__background-one" src="/perch/resources/pink-squiggle.svg" alt="Background">
+            <img class="c-camp__background-two" src="/perch/resources/orange-dots.svg" alt="Background 2">
+        </perch:block>
 </perch:blocks>

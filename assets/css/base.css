@@ -45,7 +45,7 @@ caption, th {
     --secondary-color: white;
     --light-grey: rgb(241, 241, 241);
     --accent-color: rgb(202, 108, 0);
-    --header-font: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+    --header-font: marydale , sans-serif;
     --default-font: Nunito, sans-serif;
     --border-radius-large: 25px;
     --border-radius-small: 10px;
@@ -91,7 +91,7 @@ abbr, acronym {
 }
 
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
     font-family: var(--header-font);
 }
 
@@ -133,6 +133,8 @@ main {
     align-items: stretch;
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
 }
 
 a {

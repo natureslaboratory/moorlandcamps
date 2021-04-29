@@ -10,11 +10,11 @@
                 </a>
                 <p class="c-post-card__author"><a class="c-post-card__author-link" href="/news/author/<perch:blog id="authorSlug">"><perch:blog id="authorGivenName" type="hidden" label="Name" /> <perch:blog id="authorFamilyName" type="hidden" /></a></p>
                 
-                <div class="c-post-card__details">
-                    <perch:if exists="authorImage">
-                        <img class="c-post-card__image" src="<perch:blog id="authorImage">" alt="<perch:blog id="authorGivenName">">
-                    </perch:if>
-                </div>
+                <perch:if exists="authorImag">
+                        <div class="c-post-card__details">
+                            <img class="c-post-card__image" src="<perch:blog id="authorImage">" alt="<perch:blog id="authorGivenName">">
+                        </div>
+                </perch:if>
                 <perch:layout path="tags" slug="<perch:blog id="postSlug">"/>
                 <div class="c-post-card__description l-flow">
                     <perch:blog id="excerpt" type="textarea" textile="true" />

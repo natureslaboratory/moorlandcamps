@@ -19,6 +19,9 @@ ini_set('error_reporting', E_ALL);
                 if (perch_get("s")) {
                     perch_blog_post(perch_get("s"));
                 } else {
+            ?>
+            <h2 class="c-page-title">Moorlands Camp News</h2>
+            <?php
                     perch_blog_custom([
                         "template" => "post_in_list_card.html",
                         "count" => 10

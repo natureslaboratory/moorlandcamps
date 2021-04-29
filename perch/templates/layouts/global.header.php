@@ -9,7 +9,7 @@
     <?php perch_page_attributes(); ?>
     <link rel="stylesheet" type="text/css" href="/assets/css/base.css?v=<?php echo rand() ?>">
     <link rel="stylesheet" type="text/css" href="/assets/css/stylesheet.css?v=<?php echo rand() ?>">
-
+    <link rel="stylesheet" href="https://use.typekit.net/unt8vbo.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
@@ -19,12 +19,14 @@
 
 <?php
 
-perch_content_create("Header Image", ["template" => "header_image.html"])
+perch_content_create("Header Image", ["template" => "header_image.html"]);
+
+$isHome = PerchSystem::get_page() == "/index.php" ? true : false;
 
 ?>
 
 <body>
-    <header style="background-image: url(<?php perch_content("Header Image") ?>)" class="c-header c-header--<?php echo PerchSystem::get_page() == "/index.php" ? "large" : "normal" ?> l-wrap">
+    <header style="background-image: url(<?php perch_content("Header Image") ?>)" class="c-header c-header--<?php echo $isHome ? "large" : "normal" ?> l-wrap">
         <?php perch_pages_navigation(
             [
                 'levels' => 1
@@ -36,7 +38,10 @@ perch_content_create("Header Image", ["template" => "header_image.html"])
                 'template' => 'hamburgerItem.html'
             ]
         ); ?>
-        <!-- <div class="c-header__logo-wrapper">
-            <img src="" alt="Logo">
-        </div> -->
+
+        <?php if ($isHome) { ?>
+        <div class="c-header__logo-wrapper">
+            <img class="c-header__logo" src="/perch/resources/logo-home3x.png" alt="Logo">
+        </div>
+        <?php } ?>
     </header>
