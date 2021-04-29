@@ -845,6 +845,37 @@
     line-height: normal;
 }
 
+.c-booking-form__submit {
+    position: relative;
+    top: -6px;
+    transform: rotate(358deg);
+}
+
+.c-booking-form__svg {
+    fill: #f8ac54;
+    position: relative;
+    top: 6px;
+}
+
+.c-booking-form__submit-button {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: "marydale", sans-serif;
+    font-size: 180%;
+    color: white;
+}
+
+.c-booking-form__submit-button > * {
+    position: relative;
+    top: -20px;
+}
+
 .c-post-cards {
     display: grid;
     /* grid-template-columns: 1fr 1fr; */
