@@ -20,3 +20,4 @@ perch/*
 !stripe-php-7.62.0
 !.gitignore
 !tsconfig.json
+!.cpanel.yml
