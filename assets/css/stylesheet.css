@@ -57,6 +57,10 @@
     padding: 0;
 }
 
+.l-restrict--no-bottom-padding {
+    padding-bottom: 0;
+}
+
 .l-restrict--narrow {
     max-width: 40em;
 }
