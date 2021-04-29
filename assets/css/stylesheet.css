@@ -92,6 +92,7 @@
     /* width: clamp(200px, 18vw, 250px); */
     width: 230px;
     transform: translateY(58%);
+    aspect-ratio: 1 / 1.12;
 }
 
 .c-nav {
@@ -468,6 +469,7 @@
     padding-top: 1.3rem;
     padding-bottom: 4rem;
     gap: 6rem;
+    align-items: flex-start;
 }
 
 .c-logo-left__content {
@@ -477,7 +479,6 @@
 
 .c-logo-left__logo {
     width: 165px;
-    align-self: flex-start;
     aspect-ratio: 1.04 / 1;
 }
 
