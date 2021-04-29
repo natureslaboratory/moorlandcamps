@@ -41,7 +41,7 @@ $isHome = PerchSystem::get_page() == "/index.php" ? true : false;
 
         <?php if ($isHome) { ?>
         <div class="c-header__logo-wrapper">
-            <img class="c-header__logo" src="/perch/resources/logo-home3xsmall.png" alt="Logo">
+            <img class="c-header__logo" src="/perch/resources/logo-home3xsmall-1.png" alt="Logo">
         </div>
         <?php } ?>
     </header>
