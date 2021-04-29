@@ -476,9 +476,8 @@
 }
 
 .c-logo-left__logo {
-    --width: 165px;
-    width: var(--width);
-    height: var(--width);
+    width: 165px;
+    align-self: flex-start;
 }
 
 .c-choose-camp__camps {
