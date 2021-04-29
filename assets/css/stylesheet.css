@@ -1080,3 +1080,29 @@
     color: var(--secondary-color);
     text-decoration: none;
 }
+
+table {
+    border: 1px solid rgb(224, 224, 224);
+}
+
+th {
+    background-color: var(--secondary-light);
+    color: white;
+}
+
+th, table {
+    width: 100%;
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+td:nth-child(2) {
+    border-left:  1px solid rgb(224, 224, 224);
+}
+
+.c-timetable :is(th, td) {
+    padding: 0.5rem;
+}
+
+.c-caption {
+    font-size: var(--size-300);
+}
