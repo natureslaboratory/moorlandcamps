@@ -11,7 +11,7 @@
                     </div>
                     <div class="c-logo-left__content-button-wrapper">
                         <img class="c-button__accent" src="/perch/resources/dark-dots-circle.svg" alt="Dark Dots">
-                        <button class="c-button">Book Now!</button>
+                        <a href="#book"><button class="c-button">Book Now!</button></a>
                     </div>
                 </div>
             </div>
@@ -30,7 +30,53 @@
     </perch:block>
 
     <perch:block label="Background" type="background">
-            <img class="c-camp__background-one" src="/perch/resources/pink-squiggle.svg" alt="Background">
-            <img class="c-camp__background-two" src="/perch/resources/orange-dots.svg" alt="Background 2">
-        </perch:block>
+        <img class="c-camp__background-one" src="/perch/resources/pink-squiggle.svg" alt="Background">
+        <img class="c-camp__background-two" src="/perch/resources/orange-dots.svg" alt="Background 2">
+    </perch:block>
+
+    <perch:block label="Booking Enquiry" type="booking">
+        <a id="book" class="l-wrap l-wrap--tertiary">
+            <div class="l-restrict l-restrict--narrow" style="padding-top: 3rem">
+                <perch:form id="booking_enquiry" method="post" app="perch_forms" class="c-booking-form">
+                    <h2 class="c-booking-form__title">Make a Booking Enquiry</h2>
+                    <div class="c-booking-form__columns">
+                        <div class="c-booking-form__column">
+                            <div class="c-booking-form__section">
+                                <perch:label for="name">Your Name</perch:label>
+                                <perch:input type="text" id="name" perch:label="Name">
+                            </div>
+                            <div class="c-booking-form__section">
+                                <perch:label for="name">Your Phone Number</perch:label>
+                                <perch:input type="tel" id="phone" perch:label="Phone">
+                            </div>
+                            <div class="c-booking-form__section">
+                                <perch:label for="name">Your Email Address</perch:label>
+                                <perch:input type="email" id="email" perch:label="Email">
+                            </div>
+                            <div class="c-booking-form__section">
+                                <perch:label for="name">Your School/Organisation Name</perch:label>
+                                <perch:input type="text" id="school" perch:label="School/Organisation">
+                            </div>
+                        </div>
+                        <div class="c-booking-form__column">
+                            <div class="c-booking-form__section" style="flex-grow: 2">
+                                <perch:label for="name">Your Booking Enquiry</perch:label>
+                                <perch:input type="textarea" id="enquiry" perch:label="Enquiry">
+                                <p class="c-booking-form__section-info">
+                                    Please include all relevant information such as the number of children you 
+                                    would be bringing and how long you would like the camp to run for.
+                                </p>
+                            </div>
+                            <div class="c-booking-form__section">
+                                <perch:input type="submit" id="submit" perch:label="Submit" value="Send Enquiry">
+                            </div>
+                        </div>
+                    </div>
+                    <perch:success>
+                        <perch:content id="success" type="textarea" label="Thank you message" textile editor="markitup">
+                    </perch:success>
+                </perch:form>
+            </div>
+        </a>
+    </perch:block>
 </perch:blocks>
