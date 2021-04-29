@@ -1,4 +1,4 @@
-<footer class="c-footer">
+<footer class="c-footer l-wrap">
     <div class="c-footer__content l-wrap l-restrict l-restrict--no-padding">
         <p>&#169; Moorlands Camps 2021</p>
         <div class="c-footer__details">

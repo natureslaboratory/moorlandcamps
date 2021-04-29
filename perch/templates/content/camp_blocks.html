@@ -4,12 +4,15 @@
     <perch:block type="heading" label="Heading">
         <div class="l-wrap l-wrap--<perch:content type="select" id="color" label="Background Color" options="white, primary, secondary, secondary-light, tertiary, quarternary">">
             <div class="l-restrict c-logo-left">
-                <div class="c-logo-left__placeholder"></div>
+                <img class="c-logo-left__logo" src="/perch/resources/logo-circle3x.png" alt="Moorland Camps">
                 <div class="c-logo-left__content">
                     <div class="c-text">
                         <perch:content type="textarea" label="Text" id="intro" editor="redactor" html>
                     </div>
-                    <button class="c-button">Book Now!</button>
+                    <div class="c-logo-left__content-button-wrapper">
+                        <img class="c-button__accent" src="/perch/resources/dark-dots-circle.svg" alt="Dark Dots">
+                        <button class="c-button">Book Now!</button>
+                    </div>
                 </div>
             </div>
         </div>
