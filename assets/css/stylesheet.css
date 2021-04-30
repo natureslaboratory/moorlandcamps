@@ -1094,6 +1094,11 @@
     text-decoration: none;
 }
 
+.c-table-container {
+    margin: 0 auto;
+    overflow: auto;
+}
+
 table {
     border: 1px solid rgb(224, 224, 224);
 }
@@ -1108,12 +1113,19 @@ th, table {
     border-bottom: 1px solid rgb(224, 224, 224);
 }
 
-td:nth-child(2) {
+td:nth-child(n+1) {
     border-left:  1px solid rgb(224, 224, 224);
 }
 
 .c-timetable :is(th, td) {
     padding: 0.5rem;
+    width: max-content;
+    min-width: min-content;
+}
+
+.c-timetable {
+    /* table-layout: fixed; */
+    margin: 0 auto;
 }
 
 .c-caption {
