@@ -556,7 +556,7 @@
     justify-content: center;
 }
 
-.c-choose-camp h3 {
+.c-choose-camp__title {
     color: white;
     font-size: 120%;
     max-width: 70%;
@@ -1130,4 +1130,44 @@ td:nth-child(n+1) {
 
 .c-caption {
     font-size: var(--size-300);
+}
+
+.c-pictures {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    
+    .c-pictures {
+        grid-template-columns: repeat(auto-fit, minmax(min(100px, 100%), 1fr));
+        gap: 0.5rem;
+    }
+    
+}
+
+.c-picture img {
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: 100%;
+}
+
+.fancybox-caption__body p {
+    color: white;
+}
+
+.c-albums {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+    gap: 2rem;
+}
+
+.c-album {
+    background-size: cover;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    height: auto;
 }

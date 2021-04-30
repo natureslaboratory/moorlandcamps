@@ -1,0 +1,12 @@
+<div class="c-pictures">
+    <perch:blocks>
+        <perch:block type="image" label="Image">
+            <perch:content type="image" width="800" label="Image" suppress="true" id="galleryImage">
+            <perch:content type="text" label="Image Alt" id="galleryImageAlt" suppress>
+            <a href="<perch:content id="galleryImage">" data-fancybox data-caption="<perch:content type="text" label="Caption" id="caption">">
+                <perch:layout alt="<perch:content id="galleryImageAlt">" src="<perch:content id="galleryImage">" path="gallery.thumbnail">
+            </a>
+        </perch:block>
+    </perch:blocks>
+</div>
+
