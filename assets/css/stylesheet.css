@@ -1184,3 +1184,21 @@ td:nth-child(n+1) {
     position: relative;
     height: auto;
 }
+
+.c-gallery-controls {
+    display: flex;
+    gap: 1rem;
+}
+
+.c-button--gallery {
+    color: var(--secondary);
+    text-decoration: none;
+    padding: 0.2rem 1rem;
+    border-radius: 50px;
+}
+
+.c-button--selected, .c-button--gallery:hover {
+    background-color: var(--secondary-light);
+    color: white;
+}
+

@@ -18,6 +18,13 @@ perch_content_create("Videos", ["template" => "videos.html"]);
 <main>
     <div class="l-wrap">
         <div class="l-restrict l-restrict c-albums">
+            <?php if (!perch_get("s")) { ?>
+            <div class="c-gallery-controls">
+                <a href="/gallery"><button class="c-button c-button--gallery c-button--<?= !perch_get("p") ? "selected" : "" ?>">Pictures</button></a>
+                <a href="/gallery/albums"><button class="c-button c-button--gallery c-button--<?= perch_get("p") == "albums" ? "selected" : "" ?>">Albums</button></a>
+                <a href="/gallery/videos"><button class="c-button c-button--gallery c-button--<?= perch_get("p") == "videos" ? "selected" : "" ?>">Videos</button></a>
+            </div>
+            <?php } ?>
             <?php //if (perch_get("p")) { 
             ?>
             <?php //if (perch_get("p") == "pictures") { 
@@ -42,7 +49,7 @@ perch_content_create("Videos", ["template" => "videos.html"]);
             <?php
             if (perch_get("s")) {
                 perch_gallery_album(perch_get("s"));
-            } else {
+            } else if (perch_get("p") == "albums") {
             ?>
                     <?php
 
@@ -99,7 +106,11 @@ perch_content_create("Videos", ["template" => "videos.html"]);
                     </div>
                     <?php } ?>
             <?php
-            }
+            } else if (perch_get("p") == "videos") { ?>
+                <p>Some nice videos</p>
+            <?php } else { ?>
+                <p>Some nice pictures</p>
+            <?php }
 
             function printArray($item, $depth = 0) {
                 foreach ($item as $key => $value) {
