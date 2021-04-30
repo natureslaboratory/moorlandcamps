@@ -1160,6 +1160,19 @@ td:nth-child(n+1) {
 }
 
 .c-albums {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.c-albums__year {
+    width: 100%;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgb(223, 223, 223);
+    margin-bottom: 1rem;
+}
+
+.c-albums__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
     gap: 2rem;
@@ -1170,4 +1183,5 @@ td:nth-child(n+1) {
     aspect-ratio: 16 / 9;
     position: relative;
     height: auto;
+    max-width: 400px;
 }
