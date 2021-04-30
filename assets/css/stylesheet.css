@@ -1183,5 +1183,4 @@ td:nth-child(n+1) {
     aspect-ratio: 16 / 9;
     position: relative;
     height: auto;
-    max-width: 400px;
 }
