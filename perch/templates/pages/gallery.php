@@ -90,7 +90,7 @@ perch_content_create("Videos", ["template" => "videos.html"]);
                                         </g>
                                     </svg>
                                     <div class="c-choose-camp__title-wrapper">
-                                        <h3 class="c-choose-camp__title"><?= $title . " - " . $album["date"] ?></h3>
+                                        <h3 class="c-choose-camp__title"><?= $title ?></h3>
                                     </div>
                                 </div>
                             </a>
