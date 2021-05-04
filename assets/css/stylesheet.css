@@ -236,6 +236,12 @@
     .c-hamburger {
         display: block;
     }
+
+    .c-hamburger__button {
+        position: fixed;
+        z-index: 90;
+        box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.11);;
+    }
 }
 
 .c-home-intro {
