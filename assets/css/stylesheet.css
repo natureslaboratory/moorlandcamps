@@ -10,6 +10,10 @@
     padding: 0 1rem;
 }
 
+.l-wrap--grow {
+    flex-grow: 2;
+}
+
 .l-flow>*+* {
     margin-top: var(--flow-space, 1em);
 }
@@ -817,6 +821,19 @@
     position: absolute;
     opacity: 0;
     pointer-events: none;
+}
+
+.c-booking-form--stacked {
+    margin: 0 auto;
+    max-width: 300px;
+    flex-grow: 2;
+    height: 100%;
+}
+
+.c-booking-form--stacked .c-booking-form__columns {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .c-booking-form__columns {
