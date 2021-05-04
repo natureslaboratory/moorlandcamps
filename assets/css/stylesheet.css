@@ -117,17 +117,17 @@
     flex-direction: row;
 }
 
-.c-nav__element {
+.c-nav__element, .c-hamburger__element {
     position: relative;
     font-weight: bolder;
     color: var(--primary);
 }
 
-.c-nav__element--selected, .c-nav__element:hover, .c-nav__element--ancestor {
+.c-nav__element--selected, .c-nav__element:hover, .c-nav__element--ancestor, .c-hamburger__element--selected, .c-hamburger__element--ancestor, .c-hamburger__element:hover {
     color: #faa959;
 }
 
-.c-nav__element--selected::after, .c-nav__element--ancestor::after {
+.c-nav__element--selected::after, .c-nav__element--ancestor::after, .c-hamburger__element--selected::after, .c-hamburger__element--ancestor::after {
     content: '';
     position: absolute;
     bottom: 0px;
@@ -137,6 +137,12 @@
     height: 11px;
     border-radius: 50px;
     background-color: #faa959;
+}
+
+.c-hamburger__element--selected::after, .c-hamburger__element--ancestor::after {
+    top: 50%;
+    left: -10px;
+    transform: translate(0%, -50%);
 }
 
 .c-nav__link, .c-hamburger__link {
@@ -184,10 +190,15 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    z-index: 10;
+    z-index: 100;
     transition: 300ms ease;
     opacity: 0;
     pointer-events: none;
+    gap: 0.4rem;
+}
+
+.c-hamburger__element {
+    font-size: 1.3rem;
 }
 
 .c-hamburger__element:first-child {
