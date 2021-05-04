@@ -22,6 +22,19 @@ function compareAlbums($a, $b)
     }
 }
 
+function printArray($item, $depth = 0)
+{
+    foreach ($item as $key => $value) {
+        $depthString = str_repeat("--", $depth);
+        if (gettype($value) !== "array") {
+            echo "$depthString $key: $value <br>";
+        } else {
+            echo "$depthString $key: <br>";
+            printArray($value, $depth + 1);
+        }
+    }
+}
+
 function splitByYear($albums)
 {
     $albumsByYear = [];
@@ -142,8 +155,9 @@ $albumsByYear = splitByYear($albums);
                             <?php
                             foreach ($albums as $album) {
                                 $pictures = perch_gallery_album($album["albumSlug"], ["skip-template" => true], true);
+                                // printArray($pictures);
                                 foreach ($pictures as $picture) { ?>
-                                    <a class="c-picture" href="<?= $picture["main"] ?>" data-fancybox data-caption="<?= $picture["desc"] ?>">
+                                    <a class="c-picture" href="<?= $picture["main"] ?>" data-fancybox data-caption="<?= $picture["desc"]["raw"] ?>">
                                         <img src="<?= $picture["small"] ?>" width="<?= $picture["small-w"] ?>" height="<?= $picture["small-h"] ?>" alt="<?= $picture["imageAlt"] ?>" />
                                     </a>
                             <?php }
@@ -152,19 +166,6 @@ $albumsByYear = splitByYear($albums);
                         </div>
                     </div>
                 <?php
-                }
-            }
-
-            function printArray($item, $depth = 0)
-            {
-                foreach ($item as $key => $value) {
-                    $depthString = str_repeat("--", $depth);
-                    if (gettype($value) !== "array") {
-                        echo "$depthString $key: $value <br>";
-                    } else {
-                        echo "$depthString $key: <br>";
-                        printArray($value, $depth + 1);
-                    }
                 }
             }
 
