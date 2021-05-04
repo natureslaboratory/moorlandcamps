@@ -1165,7 +1165,7 @@ td:nth-child(n+1) {
     gap: 2rem;
 }
 
-.c-albums__year {
+.c-gallery-year {
     width: 100%;
     padding: 0.5rem 0;
     border-bottom: 1px solid rgb(223, 223, 223);

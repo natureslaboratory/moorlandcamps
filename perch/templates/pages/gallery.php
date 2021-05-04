@@ -12,6 +12,30 @@ ini_set('error_reporting', E_ALL);
 perch_content_create("Pictures", ["template" => "pictures.html"]);
 perch_content_create("Videos", ["template" => "videos.html"]);
 
+function compareAlbums($a, $b) {
+    if ($a["date"] < $b["date"]) {
+        return 1;
+    } else if ($a["date"] > $b["date"]) {
+        return -1;
+    } else {
+        return 0;
+    }
+}
+
+function splitByYear($albums) {
+    $albumsByYear = [];
+    foreach ($albums as $album) {
+        $albumYear = explode("-", $album["date"])[0];
+        $albumsByYear[$albumYear][$album["albumTitle"]] = $album;
+    }
+    return $albumsByYear;
+}
+
+$albums = perch_gallery_albums(["skip-template" => true], true);
+usort($albums, "compareAlbums");
+
+$albumsByYear = splitByYear($albums);
+
 ?>
 <?php perch_layout("global.header") ?>
 
@@ -53,33 +77,9 @@ perch_content_create("Videos", ["template" => "videos.html"]);
             ?>
                     <?php
 
-                    function compareAlbums($a, $b) {
-                        if ($a["date"] < $b["date"]) {
-                            return 1;
-                        } else if ($a["date"] > $b["date"]) {
-                            return -1;
-                        } else {
-                            return 0;
-                        }
-                    }
-
-                    function splitByYear($albums) {
-                        $albumsByYear = [];
-                        foreach ($albums as $album) {
-                            $albumYear = explode("-", $album["date"])[0];
-                            $albumsByYear[$albumYear][$album["albumTitle"]] = $album;
-                        }
-                        return $albumsByYear;
-                    }
-
-                    $albums = perch_gallery_albums(["skip-template" => true], true);
-                    usort($albums, "compareAlbums");
-
-                    $albumsByYear = splitByYear($albums);
-
                     foreach ($albumsByYear as $year => $albums) { ?>
                     <div class="c-albums__block">
-                        <h3 class="c-albums__year"><?= $year ?></h3>
+                        <h3 class="c-gallery-year"><?= $year ?></h3>
                         <div class="c-albums__list">
                         <?php
                         foreach ($albums as $title => $album) { 
@@ -109,8 +109,26 @@ perch_content_create("Videos", ["template" => "videos.html"]);
             } else if (perch_get("p") == "videos") { ?>
                 <p>Some nice videos</p>
             <?php } else { ?>
-                <p>Some nice pictures</p>
-            <?php }
+                <?php
+                    foreach ($albumsByYear as $year => $albums) { ?>
+                        <div class="c-pictures-block">
+                            <h3 class="c-gallery-year"><?= $year ?></h3>
+                            <div class="c-pictures">
+                                <?php
+                                    foreach ($albums as $album) {
+                                        $pictures = perch_gallery_album($album["albumSlug"], ["skip-template" => true], true);
+                                        foreach ($pictures as $picture) { ?>
+                                            <a class="c-picture" href="<?= $picture["main"] ?>" data-fancybox data-caption="<?= $picture["desc"] ?>">
+                                                <img src="<?= $picture["small"] ?>" width="<?= $picture["small-w"] ?>" height="<?= $picture["small-h"] ?>" alt="<?= $picture["imageAlt"] ?>" />
+                                            </a>
+                                        <?php }
+                                    }
+                                ?>
+                            </div>
+                        </div>
+                    <?php 
+                    }
+                }
 
             function printArray($item, $depth = 0) {
                 foreach ($item as $key => $value) {
