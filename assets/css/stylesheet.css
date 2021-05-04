@@ -836,6 +836,10 @@
     gap: 1rem;
 }
 
+.c-booking-form--stacked .c-booking-form__submit {
+    margin-top: 1.4rem;
+}
+
 .c-booking-form__columns {
     margin-top: 1.4rem;
     display: grid;
