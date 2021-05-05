@@ -14,10 +14,16 @@ ini_set('error_reporting', E_ALL);
 
 <main>
     <div class="l-wrap">
-        <div class="l-restrict l-restrict--narrow">
+        <div class="l-restrict l-restrict--small l-restrict--narrow">
             <?php
                 if (perch_get("s")) {
                     perch_blog_post(perch_get("s"));
+                } else if (perch_get("t")) {
+                    echo "<h2 style='text-align:center; margin-bottom: 1.6rem;'>\"" . perch_get("t") . "\"</h2>";
+                    perch_blog_custom([
+                        "template" => "post_in_list_card.html",
+                        "tag" => perch_get("t")
+                    ]);
                 } else {
             ?>
             <h2 class="c-page-title">Moorlands Camp News</h2>
