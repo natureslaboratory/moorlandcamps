@@ -1,5 +1,6 @@
 RewriteEngine on
 RewriteRule ^news/tag/([a-zA-Z0-9-]+)$ /news/index.php?t=$1 [L,B]
+RewriteRule ^news/author/([a-zA-Z0-9-]+)$ /news/index.php?a=$1 [L,B]
 RewriteRule ^news/([a-zA-Z0-9-]+)$ /news/index.php?s=$1 [L,B]
 RewriteRule ^gallery/albums/([a-zA-Z0-9-]+)$ /gallery/index.php?s=$1 [L,B]
 RewriteRule ^gallery/([a-zA-Z0-9-]+)$ /gallery/index.php?p=$1 [L,B]

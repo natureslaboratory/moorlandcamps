@@ -1005,6 +1005,10 @@
     margin-top: auto;
 }
 
+.c-post-card__author {
+    margin-bottom: 0.3rem;
+}
+
 .c-post-card__author a {
     display: inline-block;
 }
@@ -1086,9 +1090,14 @@
     list-style-type: none;
     display: flex;
     gap: 10px;
-    margin-bottom: 1rem;
     flex-wrap: wrap;
+    margin-top: 1rem;
 }
+
+.c-post-card .c-post-tags {
+    margin-top: 0;
+}
+
 
 .c-post-card :is(.c-post-tags__link, .c-post-tags__button) {
     background-color: transparent;
@@ -1110,7 +1119,7 @@
 }
 
 .c-post-tags__link, .c-post-tags__button {
-    background: rgb(85, 107, 168);
+    background: var(--secondary-light);
     padding: 0.4rem 0.8rem;
     border-radius: 5px;
     display: block;

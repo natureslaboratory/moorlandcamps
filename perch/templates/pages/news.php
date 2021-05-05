@@ -24,6 +24,15 @@ ini_set('error_reporting', E_ALL);
                         "template" => "post_in_list_card.html",
                         "tag" => perch_get("t")
                     ]);
+                } else if (perch_get("a")) {
+                    
+                    $author = perch_blog_author(perch_get("a"), ["skip-template" => true]);
+
+                    echo "<h2 style='text-align:center; margin-bottom: 1.6rem;'>Posts by " . $author["authorGivenName"] . " " . $author["authorFamilyName"] . "</h2>";
+                    perch_blog_custom([
+                        "template" => "post_in_list_card.html",
+                        "author" => perch_get("a")
+                    ]);
                 } else {
             ?>
             <h2 class="c-page-title">Moorlands Camp News</h2>
