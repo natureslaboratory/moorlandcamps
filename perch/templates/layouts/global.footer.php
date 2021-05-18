@@ -2,8 +2,8 @@
     <div class="c-footer__content l-wrap l-restrict l-restrict--no-padding">
         <p>&#169; Moorlands Camps 2021</p>
         <div class="c-footer__details">
-            <p>Privacy Policy</p>
-            <p>Cancellations</p>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/cancellations">Cancellations</a>
         </div>
     </div>
 </footer>
