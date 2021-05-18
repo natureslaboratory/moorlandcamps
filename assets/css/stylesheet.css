@@ -490,7 +490,7 @@
     /* transform: translateX(-50%); */
 }
 
-.c-footer p {
+.c-footer :is(p, a) {
     color: var(--primary);
 }
 
