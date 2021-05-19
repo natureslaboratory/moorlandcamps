@@ -5,3 +5,11 @@
         </div>
     </div>
 </perch:block>
+
+<perch:block label="Vimeo Single" type="vimeo-single">
+    <div class="l-wrap">
+        <div class="l-restrict l-restrict--narrow l-restrict--<perch:content id="padding" perch:label="Padding" type="select" options="normal, no-top-padding, no-bottom-padding, no-padding"> c-text">
+            <iframe class="c-vimeo" src="https://player.vimeo.com/video/<perch:content label="Vimeo Video ID" type="text" id="videoID">" width="640" height="640" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</perch:block>

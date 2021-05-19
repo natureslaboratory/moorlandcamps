@@ -123,10 +123,32 @@ $albumsByYear = splitByYear($albums);
             } else if (perch_get("p") == "videos") { ?>
                 <div class="c-videos">
                     <?php 
+
+                    function getVideoType($url) {
+                        if (strpos($url, "youtube")) {
+                            return "youtube";
+                        } else if (strpos($url, "vimeo")) {
+                            return "vimeo";
+                        } else {
+                            return "";
+                        }
+                    }
+
                     function formatUrl($url) {
-                        $splitUrl = explode("?v=", $url);
-                        $id = $splitUrl[count($splitUrl)-1];
-                        return "https://www.youtube.com/embed/" . $id;
+                        switch (getVideoType($url)) {
+                            case "youtube":
+                                $splitUrl = explode("?v=", $url);
+                                $id = $splitUrl[count($splitUrl)-1];
+                                return "https://www.youtube.com/embed/" . $id;
+                                break;
+                            case "vimeo":
+                                $splitUrl = explode("/", $url);
+                                $id = $splitUrl[count($splitUrl)-1];
+                                return "https://player.vimeo.com/video/" . $id;
+                                break;
+                            default:
+                                return "https://www.youtube.com/watch?v=j5C6X9vOEkU";
+                        }
                     }
         
                     $videos = perch_content_custom("Videos", ["skip-template" => true], true);
