@@ -26,8 +26,6 @@ export default class Faq {
     attachEventListeners() {
         this.questions.forEach(q => {
             q.node.addEventListener("click", () => {
-                console.log("click")
-                console.log(q.isShowing)
                 if (q.isShowing) {
                     this.closeAllMenus();
                 } else {
