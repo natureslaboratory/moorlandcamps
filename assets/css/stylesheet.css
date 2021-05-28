@@ -1241,6 +1241,20 @@ td:nth-child(n+1) {
     height: auto;
 }
 
+@supports not (aspect-ratio: 16 / 9) {
+    .c-album::before {
+      float: left;
+      padding-top: 56.25%;
+      content: "";
+    }
+  
+    .c-album::after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+  }
+
 .c-gallery-controls {
     display: flex;
     gap: 1rem;
