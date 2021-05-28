@@ -12,7 +12,6 @@ export default class Question {
     constructor(node : HTMLElement) {
         this.node = node;
         let answers = this.node.parentElement.getElementsByClassName("c-faq__answer") as HTMLCollectionOf<HTMLElement>;
-        console.log(answers);
         if (answers) {
             this.answer = answers[0];
         }
@@ -23,7 +22,6 @@ export default class Question {
     }
 
     hide() {
-        console.log("hide")
         this.answer.style.maxHeight = null;
     }
 }

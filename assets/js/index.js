@@ -67,7 +67,6 @@ var Question = /** @class */ (function () {
     function Question(node) {
         this.node = node;
         var answers = this.node.parentElement.getElementsByClassName("c-faq__answer");
-        console.log(answers);
         if (answers) {
             this.answer = answers[0];
         }
@@ -86,7 +85,6 @@ var Question = /** @class */ (function () {
         this.answer.style.maxHeight = this.answer.scrollHeight + "px";
     };
     Question.prototype.hide = function () {
-        console.log("hide");
         this.answer.style.maxHeight = null;
     };
     return Question;
