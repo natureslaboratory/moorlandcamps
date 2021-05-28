@@ -594,27 +594,27 @@
     fill: inherit;
 }
 
-.c-choose-camp__camp:nth-child(1) .c-choose-camp__title-content {
+.c-choose-camp__camp:nth-child(4n+1) .c-choose-camp__title-content {
     fill: #f8ac54;
     bottom: 2rem;
     right: 1rem;
     transform: rotate(350deg);
 }
 
-.c-choose-camp__camp:nth-child(2) .c-choose-camp__title-content {
+.c-choose-camp__camp:nth-child(4n+2) .c-choose-camp__title-content {
     fill: #006c79;
     bottom: 1.5rem;
     left: 1rem;
 }
 
-.c-choose-camp__camp:nth-child(3) .c-choose-camp__title-content {
+.c-choose-camp__camp:nth-child(4n+3) .c-choose-camp__title-content {
     fill: #6cb7b7;
     top: 1rem;
     right: 2rem;
     transform: rotate(2deg);
 }
 
-.c-choose-camp__camp:nth-child(4) .c-choose-camp__title-content {
+.c-choose-camp__camp:nth-child(4n+4) .c-choose-camp__title-content {
     fill: #f18c7b;
     bottom: 1.7rem;
     right: 1rem;
